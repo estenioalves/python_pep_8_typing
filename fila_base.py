@@ -1,10 +1,11 @@
+from typing import List
 import abc
 
 
 class FilaBase(metaclass=abc.ABCMeta):
     codigo: int = 0
-    fila = []
-    clientes_atendidos = []
+    fila: List = []
+    clientes_atendidos: List = []
     senha_atual: str = ''
 
     def reseta_fila(self) -> None:
