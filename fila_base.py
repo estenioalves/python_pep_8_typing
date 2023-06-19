@@ -1,5 +1,6 @@
 import abc
 
+
 class FilaBase(metaclass=abc.ABCMeta):
     codigo: int = 0
     fila = []
@@ -12,12 +13,16 @@ class FilaBase(metaclass=abc.ABCMeta):
         else:
             self.codigo += 1
 
-    @abc.abstractmethod
-    def gera_senha_atual(self):
-        ...
+    def insere_cliente(self):
+        self.fila.append(self.senha_atual)
+
+    def atualiza_fila(self):
+        self.reseta_fila()
+        self.gera_senha_atual()
+        self.insere_cliente()
 
     @abc.abstractmethod
-    def atualiza_fila(self):
+    def gera_senha_atual(self):
         ...
 
     @abc.abstractmethod
